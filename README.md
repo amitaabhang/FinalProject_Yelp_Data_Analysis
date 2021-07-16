@@ -2,7 +2,7 @@
 
 Yelp Analysis Project
 
-###Purpose: Purpose of the project is to do the sentiment analysis of the YELP reviews data.
+### Purpose: Purpose of the project is to do the sentiment analysis of the YELP reviews data.
 
 ###Installers Used:
 •	pip install textblob
