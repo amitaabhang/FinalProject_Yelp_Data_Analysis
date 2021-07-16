@@ -2,9 +2,10 @@
 
 Yelp Analysis Project
 
-### Purpose: Purpose of the project is to do the sentiment analysis of the YELP reviews data.
+### Purpose:
+Purpose of the project is to do the sentiment analysis of the YELP reviews data.
 
-###Installers Used:
+### Installers Used:
 •	pip install textblob
 •	pip install wtforms
 •	pip install nltk
@@ -14,18 +15,20 @@ Yelp Analysis Project
 •	nltk.download('wordnet')
 
 
-###Machine Language Model Used:
+### Machine Language Model Used:
 
 •	Logistic Regression 
 •	AnyChart
 •	Pickle(to save model)
 
-###Reviews URL: https://yelp-sentiment.s3.us-east-2.amazonaws.com/yelp_academic_dataset_review.json
+### Reviews URL: 
+https://yelp-sentiment.s3.us-east-2.amazonaws.com/yelp_academic_dataset_review.json
 
-###Business Data URL: https://data-bootcamp-priya.s3.us-east-2.amazonaws.com/yelp_academic_dataset_business.json* The initial dataset is downloaded from Kaggle with 8 million records approximately. The file is placed in S3 bucket in AWS.
+### Business Data URL: 
+https://data-bootcamp-priya.s3.us-east-2.amazonaws.com/yelp_academic_dataset_business.json* The initial dataset is downloaded from Kaggle with 8 million records approximately. The file is placed in S3 bucket in AWS.
 * Using pySpark, the file is retrieved from AWS and cleaned up and filtered for all the states only in US. Finally the cleaned data with 6 million records is loaded into the POSTGRESQL database on AWS.
 
-###Sample code to write the data frame into postgresql on AWS
+### Sample code to write the data frame into postgresql on AWS
 Configuration for RDS instance
 mode="append"
 jdbc_url = "jdbc:postgresql://db-inst-on-aws.cdkwx2gwtmqa.us-east-2.rds.amazonaws.com:5432/db_on_aws"
@@ -45,10 +48,10 @@ print("Data retrieved")
 conn.close()
 cursor.close()* PGHOST, PGDATABASE, PGUSER & PGPASSWORD are provided in the config.py
 
-###Training Data: 
+### Training Data: 
 Through the ml.py file, training of data occurred to identify the sentiment of words. Data included review text in which data is trained. Using the NLTK natural language python library, stop words were removed from the data set. Then all reviews above 3 stars were coined as positive and all reviews below 3 stars were coined as negative. All 3 star reviews were dropped for ease of analysis. All punctuations, special characters and non-English words were also removed. The review text was then tokenized. The training then starts by vectorizing and using the sklearn linear regression model library. 20 percent of the data was randomly selected to start training. After the training of the model has occurred using regression analysis, using the text blob library text is classified, giving scores of polarity and subjectivity. 
 
-###Flask API links:
+### Flask API links:
 * /find/  ==> To get the data loaded into webpage during initial load
 * /findBySelect  ==> To retreive the data based on the select filter and returns json object to create map, business rating visualizations
 * /findBySelectML/  ==> Link to Machine learning part of the code and returns the json object to create the wordcloudJS files:
@@ -56,7 +59,7 @@ Through the ml.py file, training of data occurred to identify the sentiment of w
 
 
 
-###Code Files:
+### Code Files:
 
 WordCloud.js
 Word Cloud for Results: 
